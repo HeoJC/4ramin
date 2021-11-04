@@ -32,6 +32,10 @@ import com.yedam.saramin.command.adt.AdtInsertForm;
 import com.yedam.saramin.command.adt.AdtSelectAll;
 import com.yedam.saramin.resume.ResumeForm;
 
+import com.yedam.saramin.resume.ResumeUpdate;
+=======
+
+
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -68,6 +72,7 @@ public class FrontController extends HttpServlet {
 		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리
 		map.put("/resumeForm.do", new ResumeForm());
+		map.put("/resumeUpdate.do", new ResumeUpdate());
 	}
 
 	

@@ -1,7 +1,7 @@
 package com.yedam.saramin.adoptions;
 
 public class Adoption {
-	private int adtIdx;
+	private int adt_idx;
 	private String com_id;
 	private String title;
 	private String body;
@@ -12,11 +12,12 @@ public class Adoption {
 	private String sal_type;
 	private String sal_howmuch;
 	
-	public int getAdtIdx() {
-		return adtIdx;
+	
+	public int getAdt_idx() {
+		return adt_idx;
 	}
-	public void setAdtIdx(int adtIdx) {
-		this.adtIdx = adtIdx;
+	public void setAdt_idx(int adt_idx) {
+		this.adt_idx = adt_idx;
 	}
 	public String getCom_id() {
 		return com_id;

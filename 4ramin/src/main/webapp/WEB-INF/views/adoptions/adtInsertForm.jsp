@@ -20,12 +20,19 @@
   
   <script>
   function adtSubmit(){
-	  console.log('adtSubmit12');
-	  let title = document.adtInsertFrm.title.value;
-	  let adtExp = document.adtInsertFrm.adtExp.value;
-	  let career = document.adtInsertFrm.career.value;
-	  let email = document.adtInsertFrm.email.value;
+	  console.log('adtSubmit');
 	  let imgSrc = document.adtInsertFrm.imgSrc.value;
+	  let email = document.adtInsertFrm.email.value;
+	  let title = document.adtInsertFrm.title.value;
+	  let career = document.adtInsertFrm.career.value;
+	  let salType = document.adtInsertFrm.salType.value;
+	  let salHowmuch = document.adtInsertFrm.salHowmuch.value;
+	  let adtExp = document.adtInsertFrm.adtExp.value;
+	  if(imgSrc==null || imgSrc==""){
+		  alert('이미지를 등록하십시오.');
+		  document.adtInsertFrm.imgSrc.focus();
+		  return false;
+	  }
 	  if(email==null || email==""){
 		  alert('이메일을 입력하십시오.');
 		  document.adtInsertFrm.email.focus();
@@ -41,16 +48,22 @@
 		  document.adtInsertFrm.career.focus();
 		  return false;
 	  }
+	  if(salType==null || salType==""){
+		  alert('급여 지급 주기를 선택하십시오.');
+		  document.adtInsertFrm.salType.focus();
+		  return false;
+	  }
+	  if(salHowmuch==null || salHowmuch==""){
+		  alert('급여 액수를 입력하싱ㅂ시오.');
+		  document.adtInsertFrm.salHowmuch.focus();
+		  return false;
+	  }
 	  if(adtExp==null || adtExp==""){
 		  alert('종료일을 입력하십시오.');
 		  document.adtInsertFrm.adtExp.focus();
 		  return false;
 	  }
-	  if(imgSrc==null || imgSrc==""){
-		  alert('이미지를 등록하십시오.');
-		  document.adtInsertFrm.imgSrc.focus();
-		  return false;
-	  }
+
 	  let sentences = document.getElementsByClassName('ql-editor')[0].childNodes
 	  let contents= "";
 	  for(let i=0;i<sentences.length;i++){

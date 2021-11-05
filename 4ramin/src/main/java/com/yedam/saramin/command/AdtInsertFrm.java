@@ -22,7 +22,7 @@ public class AdtInsertFrm implements Command {
 		adtVO.setAdt_email(request.getParameter("email"));
 		adtVO.setAdt_imgsrc(request.getParameter("imgSrc"));
 		adtVO.setSal_type(request.getParameter("salType"));
-		adtVO.setSal_type((String)(request.getParameter("salHowmuch")));
+		adtVO.setSal_howmuch((String)(request.getParameter("salHowmuch")));
 		
 		int r = adtDAO.insertAdoption(adtVO);
 //		if(r!=1) {

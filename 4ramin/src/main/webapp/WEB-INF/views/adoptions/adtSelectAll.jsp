@@ -7,7 +7,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script>
+function adtSelectFnc(idx){
+	document.adtSelect.adt_idx.value=idx;
+	document.adtSelect.submit();
+}
+</script>
 <body>
+<form name="adtSelect" action="adtSelect.do" method="post"><input name="adt_idx" type="hidden"></form>
 		<section class="site-section">
 			<div class="container">
 
@@ -20,9 +27,7 @@
 				<ul class="job-listings mb-5">
 				
 				<c:forEach items="${adoptions }" var="adt">
-					<li class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
-						<a href="#"></a>
-						<!--여기에 공고 링크-->
+					<li onclick="adtSelectFnc(${adt.adt_idx})" class="job-listing d-block d-sm-flex pb-3 pb-sm-0 align-items-center">
 						<div class="job-listing-logo">
 							<img src="images/job_logo_1.jpg" alt="Free Website Template by Free-Template.co"
 								class="img-fluid">

@@ -7,11 +7,11 @@
 	</select>
 
 	<select id="selectAdoption" resultType="com.yedam.saramin.adoptions.Adoption">
-		select * from adoptions where com_id = #{comId}
+<!-- 		select * from adoptions where com_id = #{com_id} -->
 	</select>
 
 	<insert id="insertAdoption" parameterType="com.yedam.saramin.adoptions.Adoption">
-		insert into adoptions values (a_seq.nextval, #{comId}, #{title}, #{body}, #{career}, to_date(#{adtExp},'yyyy-MM-dd'), #{adtEmail}, #{adtImgSrc}, #{salType}, #{salHowmuch})
+		insert into adoptions values (a_seq.nextval, #{com_id}, #{title}, #{body}, #{career}, to_date(#{adt_exp},'yyyy-MM-dd'), #{adt_email}, #{adt_imgsrc}, #{sal_type}, '1')
 		<!-- insert into adoptions values (a_seq.nextval, 123,'123','123','2021-11-05','123','123.jpg') -->
 	</insert>
 

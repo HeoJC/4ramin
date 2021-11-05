@@ -37,24 +37,4 @@ public class CompanyServiceImpl implements CompanyService {
 	public int deleteCompany(CompanyVO vo) {
 		return map.deleteCompany(vo) ;
 	}
-
-	@Override
-	public int likeCompany(CompanyVO vo) {
-		return map.likeCompany(vo) ;
-	}
-
-	@Override
-	public CompanyVO selectLikeCompany(CompanyVO vo) {
-		return map.selectLikeCompany(vo) ;
-	}
-
-	@Override
-	public CompanyVO selectSalCompany(CompanyVO vo) {
-		return map.selectSalCompany(vo) ;
-	}
-
-	@Override
-	public int insertSalCompany(CompanyVO vo) {
-		return map.insertSalCompany(vo) ;
-	}
 }

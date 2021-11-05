@@ -1,11 +1,11 @@
-package com.yedam.saramin.command;
+package com.yedam.saramin.command.adt;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
 
-public class UserOne implements Command {
+public class AdtSelect implements Command {
 
 	@Override
 	public String run(HttpServletRequest request, HttpServletResponse response) {

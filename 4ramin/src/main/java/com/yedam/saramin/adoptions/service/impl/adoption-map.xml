@@ -11,7 +11,8 @@
 	</select>
 
 	<insert id="insertAdoption" parameterType="com.yedam.saramin.adoptions.Adoption">
-		insert into adoptions values (#{adt})
+		insert into adoptions values (a_seq.nextval, #{comId}, #{title}, #{body}, #{career}, to_date(#{adtExp},'yyyy-MM-dd'), #{adtEmail}, #{adtImgSrc}, #{salType}, #{salHowmuch})
+		<!-- insert into adoptions values (a_seq.nextval, 123,'123','123','2021-11-05','123','123.jpg') -->
 	</insert>
 
 	<delete id="deleteAdoption" parameterType="com.yedam.saramin.adoptions.Adoption">

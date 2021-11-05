@@ -12,68 +12,6 @@
     <link rel="stylesheet" href="fonts/line-icons/style.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
-    
-    <script src="js/jquery.min.js"></script>
-    
-    <script type="text/javascript">
-    
-    	function likeplus() {   
-    		var com_id = $("#com_id").val() ;
-    		$.ajax({
-    			url : "companyLike.do?com_id=" + com_id ,
-    			type : "get" ,
-    			data : {
-    				com_id : com_id
-    			} ,    			
-    			success : function() {
-    				likeview() 
-    			}    			
-    		}) 
-    	}
-    	
-    	function likeview() {
-    		var com_id = $("#com_id").val() ;
-    		$.ajax({
-    			url : "companyLikeSelect.do?com_id=" + com_id ,
-    			type : "get" ,
-    			data : {
-    				com_id : com_id
-    			} ,
-    			success : function(result) {
-    				$("#like").html("<span class='icon-heart-o mr-2 text-danger'></span>좋아요 : " + result) ;
-    			}
-    		}) 
-    	}
-    	
-    </script>
-    
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-    	  console.log('${salary.com_id}');
-        var data = google.visualization.arrayToDataTable([
-          ['연도', '평균연봉 (단위 : 만원)'],
-          ['2019', '${salary.sal_2019}'],
-          ['2020', '${salary.sal_2020}'],
-          ['2021', '${salary.sal_2021}']
-        ]);
-
-        var options = {
-          chart: {
-            title: '연도별 신입직원 평균연봉',
-            subtitle: '평균연봉',
-          }
-        };
-
-        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-        chart.draw(data, google.charts.Bar.convertOptions(options));
-      }
-    </script>
-    
 </head>
 <body>
   <section class="site-section">
@@ -95,7 +33,7 @@
                 <a href="#" class="btn btn-block btn-light btn-md">즐겨찾기 추가</a>
               </div>
               <div class="col-6">
-                <a onclick="likeplus()" href="javascript:void(0)" id="like" class="btn btn-block btn-primary btn-md"><span class="icon-heart-o mr-2 text-danger"></span>좋아요 : ${company.com_like }</a>
+                <a href="#" class="btn btn-block btn-primary btn-md"><span class="icon-heart-o mr-2 text-danger"></span>좋아요</a>
               </div>
             </div>
           </div>
@@ -104,7 +42,7 @@
           <div class="col-lg-8">
             
             <div class="mb-5">
-              <div id="columnchart_material" style="width: 730px; height: 486px;"></div>
+              <figure class="mb-5"><img src="images/job_single_img_1.jpg" alt="Image" class="img-fluid rounded"></figure>
               <!-- 지도 들어갈 자리 크기는 730 X 486 -->
             </div>
 
@@ -119,7 +57,7 @@
                 <li class="mb-2"><strong class="text-black">사업자번호 : </strong>${company.com_reg }</li>
                 <li class="mb-2"><strong class="text-black">주소 : </strong>${company.com_loc }</li>
                 <li class="mb-2"><strong class="text-black">직원수 : </strong>${company.com_imp }</li>
-                <li class="mb-2"><strong class="text-black">신입평균연봉 : </strong>${company.com_sal }</li>
+                <li class="mb-2"><strong class="text-black">신입초봉 : </strong>${company.com_sal }</li>
                 <li class="mb-2"><strong class="text-black">연락처 : </strong>${company.com_phone }</li>
                 <li class="mb-2"><strong class="text-black">이메일 : </strong>${company.com_email }</li>
               </ul>
@@ -136,9 +74,9 @@
           </div>
         </div>
       </div>
-      <input type="hidden" id="com_id" name="com_id" value="${company.com_id }">
     </section>
-   
+    
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
     <script src="js/stickyfill.min.js"></script>

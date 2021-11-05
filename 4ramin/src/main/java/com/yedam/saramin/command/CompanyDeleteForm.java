@@ -15,9 +15,7 @@ public class CompanyDeleteForm implements Command {
 		HttpSession session = request.getSession() ;
 		CompanyVO vo = new CompanyVO() ;
 		vo.setCom_id(String.valueOf(session.getAttribute("id"))) ;
-		vo.setCom_pw(String.valueOf(session.getAttribute("pw"))) ;
-		vo.setCom_reg(String.valueOf(session.getAttribute("com_reg"))) ;
-		
+		vo.setCom_name(String.valueOf(session.getAttribute("name"))) ;
 		request.setAttribute("company", vo) ;
 		
 		// 탈퇴 폼 불렀을 때 회사 아이디랑 회사명이 기본으로 폼에 들어가도록 하려고 세션에서 받는걸로

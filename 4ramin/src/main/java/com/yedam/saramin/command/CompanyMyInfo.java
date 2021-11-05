@@ -21,11 +21,6 @@ public class CompanyMyInfo implements Command {
 		vo = companyDao.selectCompany(vo) ;
 		request.setAttribute("company", vo) ;
 		
-		CompanyVO vo2 = new CompanyVO() ;
-		vo2.setCom_id(String.valueOf(session.getAttribute("id"))) ;
-		vo2 = companyDao.selectSalCompany(vo2) ;
-		request.setAttribute("salary", vo2) ;
-		
 		return "company/companySelect" ;
 	}
 

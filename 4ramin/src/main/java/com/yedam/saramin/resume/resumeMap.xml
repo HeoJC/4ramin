@@ -20,5 +20,6 @@
 	<delete id="resumeDelete" parameterType="com.yedam.saramin.resume.ResumeVO">
 		delete from resume where rsm_id = #{rsm_id}
 	</delete>
+	
 </mapper>	
 	

@@ -14,16 +14,10 @@ public class CompanySelect implements Command {
 	public String run(HttpServletRequest request, HttpServletResponse response) {
 		// 기업정보 조회
 		CompanyService companyDao = new CompanyServiceImpl() ;
-		CompanyVO vo1 = new CompanyVO() ;
-		vo1.setCom_id(request.getParameter("com_id")) ;
-		vo1 = companyDao.selectCompany(vo1) ;
-		System.out.println(vo1.getCom_intro());
-		request.setAttribute("company", vo1) ;
-		
-		CompanyVO vo2 = new CompanyVO() ;
-		vo2.setCom_id(request.getParameter("com_id")) ;
-		vo2 = companyDao.selectSalCompany(vo2) ;
-		request.setAttribute("salary", vo2) ;
+		CompanyVO vo = new CompanyVO() ;
+		vo.setCom_id(request.getParameter("com_id")) ;
+		vo = companyDao.selectCompany(vo) ;
+		request.setAttribute("company", vo) ;
 		
 		return "company/companySelect" ;
 	}

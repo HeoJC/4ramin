@@ -86,18 +86,6 @@
 									<li><a href="#">이력서 관리</a></li>
 								</ul>
 							</li>
-							
-							<li class="has-children">
-								<a href="javascript:void(0)">기업</a>
-								<ul class="dropdown">
-
-									<li><a href="companyJoinForm.do">기업 회원가입 (임시로 여기)</a></li>
-									<li><a href="companySelectList.do">기업 목록</a></li>
-									<li><a href="companyMyInfo.do">기업 나의 정보</a></li>
-									<li><a href="companyUpdateForm.do">기업 정보 수정 / 탈퇴</a></li>
-								</ul>
-							</li>
-							
 							<li class="d-lg-none"><a href="loginForm.do">로그인</a></li>
 							<li class="d-lg-none"><a href="logout.do">로그아웃</a></li>
 						</ul>
@@ -105,24 +93,26 @@
 
 					<div class="right-cta-menu text-right d-flex aligin-items-center col-6">
 						<div class="ml-auto">
-							<c:if test="${empty id}">
+						
 							<%-- <c:if test="${not empty sessionScope.userId}"> --%>
 							<a href="UsersJoinForm.do"
 								class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
 								<span class="mr-2 icon-add"></span>회원가입</a>
-								<a href="loginForm.do" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
+							<a href="loginForm.do" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
 								<span class="mr-2 icon-lock_outline"></span>로그인</a>
-							</c:if>
-							<c:if test="${not empty id}">
-								<c:if test="${id == 'admin' }">
-										<a href="#" class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
-											<span class="mr-2 icon-add"></span>관리자페이지
-										</a>
-									</c:if>
-								<a href="#" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
+							<%-- </c:if> --%>
+							<c:if test="${not empty sessionScope.userId}">
+							<a href="javascript:void(0)"
+								class="btn btn-outline-white border-width-2 d-none d-lg-inline-block">
+								<%-- ${sessionScope.name} --%>
+								</a>
+							<%-- 로그인 --%>
+							<a href="#" class="btn btn-primary border-width-2 d-none d-lg-inline-block">
 								<span class="mr-2 icon-lock_outline"></span>로그아웃</a>
-							</c:if>
+						</c:if>
 						</div>
+						<a href="#" class="site-menu-toggle js-menu-toggle d-inline-block d-xl-none mt-lg-2 ml-3">
+						<span class="icon-menu h3 m-0 p-0 mt-2"></span></a>
 					</div>
 
 				</div>

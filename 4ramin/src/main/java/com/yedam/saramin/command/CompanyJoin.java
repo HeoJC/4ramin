@@ -14,29 +14,22 @@ public class CompanyJoin implements Command {
 	public String run(HttpServletRequest request, HttpServletResponse response) {
 		// 기업 회원가입 처리
 		CompanyService companyDao = new CompanyServiceImpl() ;
-		CompanyVO vo1 = new CompanyVO() ;
+		CompanyVO vo = new CompanyVO() ;
 		
-		vo1.setCom_id(request.getParameter("com_id")) ;
-		vo1.setCom_pw(request.getParameter("com_pw")) ;
-		vo1.setCom_name(request.getParameter("com_name")) ;
-		vo1.setCom_intro(request.getParameter("com_intro")) ;
-		vo1.setCom_phone(request.getParameter("com_phone")) ;
-		vo1.setCom_email(request.getParameter("com_email")) ;
-		vo1.setCom_loc(request.getParameter("com_loc")) ;
-		vo1.setCom_reg(request.getParameter("com_reg")) ;
-		vo1.setCom_imp(request.getParameter("com_imp")) ;
-		vo1.setCom_man(request.getParameter("com_man")) ;
-		vo1.setCom_sal(request.getParameter("com_sal")) ;
+		vo.setCom_id(request.getParameter("com_id")) ;
+		vo.setCom_pw(request.getParameter("com_pw")) ;
+		vo.setCom_name(request.getParameter("com_name")) ;
+		vo.setCom_intro(request.getParameter("com_intro")) ;
+		vo.setCom_phone(request.getParameter("com_phone")) ;
+		vo.setCom_email(request.getParameter("com_email")) ;
+		vo.setCom_loc(request.getParameter("com_loc")) ;
+		vo.setCom_reg(request.getParameter("com_reg")) ;
+		vo.setCom_imp(request.getParameter("com_imp")) ;
+		vo.setCom_man(request.getParameter("com_man")) ;
+		vo.setCom_sal(request.getParameter("com_sal")) ;
 		
-		int n = companyDao.insertCompany(vo1) ;
-		
-		CompanyVO vo2 = new CompanyVO() ;
-		
-		vo2.setCom_id(request.getParameter("com_id")) ;
-		vo2.setSal_2021(request.getParameter("com_sal")) ;
-		
-		companyDao.insertSalCompany(vo2) ;
-		
+		int n = companyDao.insertCompany(vo) ;
+		System.out.println(n);
 		String viewPage = null ;
 		
 		if (n != 0) {

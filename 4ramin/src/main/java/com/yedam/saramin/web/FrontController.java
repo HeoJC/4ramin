@@ -12,12 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.yedam.saramin.comm.Command;
+import com.yedam.saramin.command.AdtInsertFrm;
 import com.yedam.saramin.command.CompanyDelete;
 import com.yedam.saramin.command.CompanyDeleteForm;
 import com.yedam.saramin.command.CompanyJoin;
 import com.yedam.saramin.command.CompanyJoinForm;
-import com.yedam.saramin.command.CompanyLike;
-import com.yedam.saramin.command.CompanyLikeSelect;
 import com.yedam.saramin.command.CompanyLogin;
 import com.yedam.saramin.command.CompanyMyInfo;
 import com.yedam.saramin.command.CompanySelect;
@@ -26,12 +25,12 @@ import com.yedam.saramin.command.CompanyUpdate;
 import com.yedam.saramin.command.CompanyUpdateForm;
 import com.yedam.saramin.command.HomeCommand;
 import com.yedam.saramin.command.LoginForm;
-import com.yedam.saramin.command.UserDeleto;
 import com.yedam.saramin.command.UserList;
 import com.yedam.saramin.command.UserOne;
 import com.yedam.saramin.command.UsersJoin;
 import com.yedam.saramin.command.UsersJoinForm;
 import com.yedam.saramin.command.adt.AdtInsertForm;
+import com.yedam.saramin.command.adt.AdtSelect;
 import com.yedam.saramin.command.adt.AdtSelectAll;
 import com.yedam.saramin.resume.ResumeForm;
 
@@ -49,14 +48,15 @@ public class FrontController extends HttpServlet {
 		map.put("/main.do", new HomeCommand());
 		map.put("/adtSelectAll.do", new AdtSelectAll());
 		map.put("/adtInsertForm.do", new AdtInsertForm());
+		map.put("/adtInsertFrm.do", new AdtInsertFrm());
+		map.put("/adtSelect.do", new AdtSelect());
+		
 		
 		// 최창인 command
 		map.put("/UsersJoinForm.do", new UsersJoinForm()); //회원가입 폼
 		map.put("/UsersJoin.do", new UsersJoin()); //회원가입 처리
 		map.put("/UserList.do", new UserList());//회원 리스트 출력
-		map.put("/UserOne.do", new UserOne()); //회원 한건 검색(모달 완성)
-		map.put("/UserDeleto.do", new UserDeleto());//회원 정보 삭제
-		
+		map.put("/UserOne.do", new UserOne()); //회원 한건 검색 (구현해야함
 		// 허재철 command
 		map.put("/loginForm.do", new LoginForm()) ; // 로그인 폼 호출
 		map.put("/companyLogin.do", new CompanyLogin()) ; // 기업 로그인 처리
@@ -65,17 +65,13 @@ public class FrontController extends HttpServlet {
 		map.put("/companySelectList.do", new CompanySelectList()) ; // 기업 전체목록 조회 (테스트끝)
 		map.put("/companySelect.do", new CompanySelect()) ; // 기업 상세 정보 조회 (테스트끝)
 		map.put("/companyMyInfo.do", new CompanyMyInfo()) ; // 기업 내 정보 보기 (테스트끝)
-		map.put("/companyLike.do" , new CompanyLike()) ; // 기업 좋아요 (테스트끝)
-		map.put("/companyLikeSelect.do", new CompanyLikeSelect()) ; // 기업 좋아요 조회 (테스트끝)
 		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출 (테스트끝)
 		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리 (테스트끝)
 		map.put("/companyDeleteForm.do", new CompanyDeleteForm()) ; // 기업 회원 탈퇴 폼 호출 (테스트끝)
 		map.put("/companyDelete.do", new CompanyDelete()) ; // 기업 회원 탈퇴 (테스트끝) (관리자가 탈퇴시키는것도 이걸로 같이)
 		map.put("/companySelect.do", new CompanySelect()) ; // 기업 정보 조회 (테스트끝)
-		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출 (테스트끝)
-		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리 (테스트끝)
-		
-		// 승근씨 command
+		map.put("/companyUpdateForm.do", new CompanyUpdateForm()) ; // 기업 정보 수정 폼 호출
+		map.put("/companyUpdate.do", new CompanyUpdate()) ; // 기업 정보 수정 처리
 		map.put("/resumeForm.do", new ResumeForm());
 	}
 

@@ -18,35 +18,6 @@
 <link rel="stylesheet" href="css/animate.min.css">
 <link rel="stylesheet" href="css/quill.snow.css">
 
-<script src="js/jquery.min.js"></script>
-
-<script type="text/javascript">
-	function loginCheck() { 
-		var com_id = $("#com_id").val() ;
-		var com_pw = $("#com_pw").val() ;
-		var com_reg = $("#com_reg").val() ;
-		console.log($("#com_id").val())
-		console.log($("#com_pw").val())
-		console.log($("#com_reg").val())
-		$.ajax({
-			url : "companyLogin.do" ,
-			type : "get" ,
-			data : {
-				com_id : com_id ,
-				com_pw : com_pw ,
-				com_reg : com_reg
-			} ,
-			datatype : "json" ,
-			success: function() {
-				location.href = "main.do" ; 
-		    },
-		    error: function() {
-		        alert("아이디 혹은 비밀번호 혹은 사업자번호를 다시 확인하세요");
-		        return ;
-		    }
-		})
-	}
-</script>
 
 <!-- MAIN CSS -->
 <link rel="stylesheet" href="css/style.css">
@@ -58,7 +29,7 @@
 			<div class="row">
 				<div class="col-lg-6 mb-5">
 					<h2 class="mb-4">사업자 회원전용 로그인</h2>
-					<form id="frm" action="companyLogin.do" class="p-4 border rounded">
+					<form action="companyLogin.do" class="p-4 border rounded">
 
 						<div class="row form-group">
 							<div class="col-md-12 mb-3 mb-md-0">
@@ -84,7 +55,7 @@
 
 						<div class="row form-group">
 							<div class="col-md-12">
-								<input type="button" value="Log in" onclick="loginCheck()"
+								<input type="submit" value="Log in"
 									class="btn px-4 btn-primary text-white">
 							</div>
 						</div>
@@ -139,6 +110,7 @@
     </section>
 
 	<!-- SCRIPTS -->
+	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.bundle.min.js"></script>
 	<script src="js/isotope.pkgd.min.js"></script>
 	<script src="js/stickyfill.min.js"></script>

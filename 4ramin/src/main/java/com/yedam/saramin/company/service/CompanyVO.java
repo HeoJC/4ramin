@@ -12,10 +12,6 @@ public class CompanyVO {
 	private String com_imp ;
 	private String com_man ;
 	private String com_sal ;
-	private String com_like ;
-	private String sal_2019 ;
-	private String sal_2020 ;
-	private String sal_2021 ;
 	
 	public CompanyVO () {}
 
@@ -105,38 +101,6 @@ public class CompanyVO {
 
 	public void setCom_sal(String com_sal) {
 		this.com_sal = com_sal;
-	}
-
-	public String getCom_like() {
-		return com_like;
-	}
-
-	public void setCom_like(String com_like) {
-		this.com_like = com_like;
-	}
-
-	public String getSal_2019() {
-		return sal_2019;
-	}
-
-	public void setSal_2019(String sal_2019) {
-		this.sal_2019 = sal_2019;
-	}
-
-	public String getSal_2020() {
-		return sal_2020;
-	}
-
-	public void setSal_2020(String sal_2020) {
-		this.sal_2020 = sal_2020;
-	}
-
-	public String getSal_2021() {
-		return sal_2021;
-	}
-
-	public void setSal_2021(String sal_2021) {
-		this.sal_2021 = sal_2021;
 	}
 	
 	
